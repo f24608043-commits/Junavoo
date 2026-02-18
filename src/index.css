@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 14% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 10%;
+
+    /* Warm Charcoal Primary */
+    --primary: 220 14% 18%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Warm Orange Accent */
+    --accent-orange: 26 100% 50%;
+    --accent-orange-foreground: 0 0% 100%;
+
+    --secondary: 220 9% 92%;
+    --secondary-foreground: 220 14% 18%;
+
+    --muted: 220 9% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 9% 95%;
+    --accent-foreground: 220 14% 18%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 14% 18%;
+
+    --radius: 0.875rem;
+
+    --sidebar-background: 220 14% 10%;
+    --sidebar-foreground: 220 9% 90%;
+    --sidebar-primary: 26 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 18%;
+    --sidebar-accent-foreground: 220 9% 90%;
+    --sidebar-border: 220 14% 16%;
+    --sidebar-ring: 26 100% 50%;
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    --shadow-2xs: 0 1px 2px 0 hsl(220 14% 10% / 0.04);
+    --shadow-xs: 0 1px 3px 0 hsl(220 14% 10% / 0.06), 0 1px 2px -1px hsl(220 14% 10% / 0.04);
+    --shadow-sm: 0 2px 8px 0 hsl(220 14% 10% / 0.08), 0 1px 3px -1px hsl(220 14% 10% / 0.05);
+    --shadow-md: 0 4px 16px 0 hsl(220 14% 10% / 0.10), 0 2px 6px -2px hsl(220 14% 10% / 0.06);
+    --shadow-lg: 0 8px 32px 0 hsl(220 14% 10% / 0.12), 0 4px 12px -4px hsl(220 14% 10% / 0.08);
+    --shadow-xl: 0 16px 48px 0 hsl(220 14% 10% / 0.15), 0 8px 24px -8px hsl(220 14% 10% / 0.10);
+    --shadow-2xl: 0 24px 64px 0 hsl(220 14% 10% / 0.20);
+
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 220 14% 7%;
+    --foreground: 220 9% 94%;
+
+    --card: 220 14% 10%;
+    --card-foreground: 220 9% 94%;
+
+    --popover: 220 14% 12%;
+    --popover-foreground: 220 9% 94%;
+
+    --primary: 220 9% 88%;
+    --primary-foreground: 220 14% 7%;
+
+    --secondary: 220 14% 15%;
+    --secondary-foreground: 220 9% 88%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 220 14% 14%;
+    --accent-foreground: 220 9% 88%;
+
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 220 9% 80%;
+
+    --sidebar-background: 220 14% 6%;
+    --sidebar-foreground: 220 9% 88%;
+    --sidebar-primary: 26 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 12%;
+    --sidebar-accent-foreground: 220 9% 88%;
+    --sidebar-border: 220 14% 14%;
+    --sidebar-ring: 26 100% 50%;
+
+    --chart-1: 220 70% 65%;
+    --chart-2: 160 60% 55%;
+    --chart-3: 30 80% 60%;
+    --chart-4: 280 65% 65%;
+    --chart-5: 340 75% 60%;
+
+    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.15);
+    --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.2);
+    --shadow-sm: 0 2px 8px 0 hsl(0 0% 0% / 0.25);
+    --shadow-md: 0 4px 16px 0 hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 8px 32px 0 hsl(0 0% 0% / 0.35);
+    --shadow-xl: 0 16px 48px 0 hsl(0 0% 0% / 0.4);
+    --shadow-2xl: 0 24px 64px 0 hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .orange-accent {
+    color: hsl(var(--accent-orange));
+  }
+
+  .bg-orange-accent {
+    background-color: hsl(var(--accent-orange));
+    color: hsl(var(--accent-orange-foreground));
+  }
+
+  .container-tight {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  /* Product card hover effects */
+  .product-card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Smooth underline link */
+  .link-underline {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* Section spacing */
+  .section-py {
+    @apply py-16 md:py-24;
+  }
+
+  .section-py-sm {
+    @apply py-10 md:py-16;
+  }
+
+  /* Card base */
+  .card-base {
+    @apply rounded-2xl border bg-card shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  /* Badge */
+  .badge-orange {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-accent;
+  }
+
+  /* Number counter animation */
+  @keyframes count-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-count {
+    animation: count-up 0.3s ease-out;
+  }
+
+  /* Skeleton */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--border)) 50%, hsl(var(--muted)) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
