@@ -56,7 +56,7 @@ export default function Hero3D() {
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
                     className="flex flex-col items-center gap-12"
                 >
-                    <h1 className="text-7xl md:text-9xl lg:text-[14rem] font-black tracking-tighter leading-[0.8] text-slate-950 dark:text-white drop-shadow-2xl select-none pointer-events-none">
+                    <h1 className="text-7xl md:text-9xl lg:text-[14rem] font-black tracking-tighter leading-[0.8] text-orange-500 dark:text-white drop-shadow-2xl select-none pointer-events-none">
                         {content.headline}
                     </h1>
 
