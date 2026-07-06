@@ -1,0 +1,11 @@
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/cart")({
+  head: () => ({ meta: [{ title: "cart — My Store" }] }),
+  component: () => (
+    <div className="mx-auto max-w-6xl px-4 py-12">
+      <h1 className="text-2xl font-semibold capitalize">cart</h1>
+      <p className="mt-2 text-sm text-muted-foreground">Storefront cart page coming in Phase 3–4.</p>
+    </div>
+  ),
+});
