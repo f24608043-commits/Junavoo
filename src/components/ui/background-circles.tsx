@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import clsx from "clsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { FlipText } from "@/components/ui/flip-text";
 
 interface BackgroundCirclesProps {
     title?: string;
@@ -82,19 +80,9 @@ const COLOR_VARIANTS = {
 } as const;
 
 const AnimatedGrid = () => (
-    <motion.div
-        className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"
-        animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"],
-        }}
-        transition={{
-            duration: 40,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-        }}
-    >
+    <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]">
         <div className="h-full w-full [background-image:repeating-linear-gradient(100deg,#64748B_0%,#64748B_1px,transparent_1px,transparent_4%)] opacity-20" />
-    </motion.div>
+    </div>
 );
 
 export function BackgroundCircles({
@@ -118,9 +106,9 @@ export function BackgroundCircles({
             )}
         >
             <AnimatedGrid />
-            <motion.div className="absolute h-[480px] w-[480px]">
+            <div className="absolute h-[480px] w-[480px]">
                 {[0, 1, 2].map((i) => (
-                    <motion.div
+                    <div
                         key={i}
                         className={clsx(
                             "absolute inset-0 rounded-full",
@@ -128,16 +116,6 @@ export function BackgroundCircles({
                             variantStyles.border[i],
                             variantStyles.gradient
                         )}
-                        animate={{
-                            rotate: 360,
-                            scale: [1, 1.05 + i * 0.05, 1],
-                            opacity: [0.8, 1, 0.8],
-                        }}
-                        transition={{
-                            duration: 5,
-                            repeat: Number.POSITIVE_INFINITY,
-                            ease: "easeInOut",
-                        }}
                     >
                         <div
                             className={clsx(
@@ -148,16 +126,11 @@ export function BackgroundCircles({
                                 )}/10%,transparent_70%)]`
                             )}
                         />
-                    </motion.div>
+                    </div>
                 ))}
-            </motion.div>
+            </div>
 
-            <motion.div
-                className="relative z-10 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-            >
+            <div className="relative z-10 text-center">
                 <h1
                     className={clsx(
                         "text-5xl font-bold tracking-tight md:text-7xl",
@@ -168,12 +141,7 @@ export function BackgroundCircles({
                     {title}
                 </h1>
 
-                <motion.div
-                    className="mt-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                >
+                <div className="mt-8">
                     <Link 
                         to="/shop"
                         className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
@@ -181,8 +149,8 @@ export function BackgroundCircles({
                         Shop Now
                         <ArrowRight className="h-5 w-5" />
                     </Link>
-                </motion.div>
-            </motion.div>
+                </div>
+            </div>
 
             <div className="absolute inset-0 [mask-image:radial-gradient(90%_60%_at_50%_50%,#000_40%,transparent)]">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#0F766E/30%,transparent_70%)] blur-[120px]" />

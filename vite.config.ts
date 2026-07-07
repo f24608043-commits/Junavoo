@@ -20,29 +20,6 @@ export default defineConfig(({ mode }) => ({
     minify: "terser",
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          if (id.includes("node_modules")) {
-            if (id.includes("react") || id.includes("react-dom")) {
-              return "vendor-react";
-            }
-            if (id.includes("@radix-ui")) {
-              return "vendor-radix";
-            }
-            if (id.includes("@supabase")) {
-              return "vendor-supabase";
-            }
-            if (id.includes("@tanstack")) {
-              return "vendor-query";
-            }
-            if (id.includes("framer-motion") || id.includes("gsap")) {
-              return "vendor-animation";
-            }
-            if (id.includes("recharts")) {
-              return "vendor-charts";
-            }
-            return "vendor";
-          }
-        },
         chunkFileNames: "assets/js/[name]-[hash].js",
         entryFileNames: "assets/js/[name]-[hash].js",
         assetFileNames: "assets/[ext]/[name]-[hash].[ext]",

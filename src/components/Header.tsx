@@ -8,7 +8,6 @@ import { useCategories } from "@/hooks/use-categories";
 import { useState, useEffect, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { gsap } from "gsap";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -25,15 +24,6 @@ export default function Header() {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    if (headerRef.current) {
-      gsap.fromTo(headerRef.current,
-        { y: -8, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
-      );
-    }
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
